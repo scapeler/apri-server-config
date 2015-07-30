@@ -17,6 +17,7 @@ module.exports = {
 	systemMainModuleName: null,
 	systemListenPort: null,
 	systemRepositoryHttpServer: null,
+	apps:null,
 
 
 	init: function (systemMainModuleName) {
@@ -48,6 +49,9 @@ module.exports = {
 		var systemVersionL3 		= systemConfig.system.version.l3;
 		var systemVersion 			= systemVersionL1 + '.' + systemVersionL2 + '.' + systemVersionL3;
 		var systemServiceType 		= systemConfig.system.serviceType;
+		
+		// Applications
+		this.apps					= systemConfig.apps;
 
 		// Parameters
 		this.systemRepositoryHttpServer = systemConfig.parameter.repositoryHttpServer;   //  ! geen systemCode, direct access !
