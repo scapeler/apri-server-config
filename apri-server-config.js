@@ -14,6 +14,7 @@ module.exports = {
 	systemCode: null,
 	systemBaseCode: null,
 	mainSystemCode: null,
+	systemEnv: null,
 	systemMainModuleName: null,
 	systemListenPort: null,
 	systemRepositoryHttpServer: null,
@@ -43,6 +44,7 @@ module.exports = {
 		var systemName 				= systemConfig.system.systemName;
 		this.systemCode 			= systemConfig.system.systemCode;
 		this.mainSystemCode 		= systemConfig.system.systemCode;
+		this.systemEnv 				= systemConfig.system.systemEnv;
 		this.systemListenPort 		= systemConfig.system.systemListenPort;
 		var systemVersionL1 		= systemConfig.system.version.l1;
 		var systemVersionL2 		= systemConfig.system.version.l2;
@@ -76,6 +78,9 @@ module.exports = {
 					if (_module.systemListenPort) {
 						this.systemListenPort = _module.systemListenPort;
 					}
+					if (_module.systemEnv) {
+						this.systemEnv = _module.systemEnv;
+					}
 					break;
 				}
 			}
@@ -88,6 +93,7 @@ module.exports = {
 		console.log(' Systemmaincode / subcode:', this.mainSystemCode, this.systemCode );
 		console.log(' Systemversion           :', systemVersion);
 		console.log(' Systemhost              :', systemHostName);
+		console.log(' System environment      :', this.systemEnv);
 		console.log(' System config folder    :', systemFolder);
 		console.log(' System Main modulename  :', this.systemMainModuleName);
 		console.log(' Servicetype             :', systemServiceType);
